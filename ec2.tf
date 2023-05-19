@@ -72,7 +72,7 @@ resource "aws_autoscaling_policy" "web-scaling" {
 
 resource "aws_instance" "jumpbox" {
   ami                         = "ami-0b08bfc6ff7069aff"
-  instance_type               = "t2.small"
+  instance_type               = "t2.micro"
   key_name                   = "terraform_key_pair"
    vpc_security_group_ids      = [aws_security_group.web_sg_public.id]
   subnet_id                   = aws_subnet.public01.id
